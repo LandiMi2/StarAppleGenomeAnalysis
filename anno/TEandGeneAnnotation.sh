@@ -33,3 +33,7 @@ agat_sp_manage_functional_annotation.pl -f ../eggnog/star.emapper.decorated.gff 
 -b ../blastp/star.filtered.outfmt6 -d /data01/mlandi/databases/uniprot/uniprot_sprot.fasta \
 -i ../interproscan/res/StarAppleProteinClean.fa.tsv \
 --clean_dbxref --clean_name --clean_product --pcd --pe 3 -o StarAppleFinal --cpu 10
+
+
+### run EDTA
+perl edta.pl --genome StarAppleCHR.fa --overwrite 1 --sensitive 1 --threads 10 --anno 1
