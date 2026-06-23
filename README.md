@@ -93,38 +93,6 @@ flowchart TD
 
 ---
 
-## Software used
-
-| Step | Tool | Notes |
-|---|---|---|
-| QC / trimming | [fastp](https://github.com/OpenGene/fastp) | v0.23.x |
-| Read QC | [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) | |
-| K-mer counting | [Jellyfish](https://github.com/gmarcais/Jellyfish) | v2.2.8 |
-| Genome profiling | [GenomeScope2](https://github.com/tbenavi1/genomescope2.0) | |
-| K-mer pairing / ploidy | [FastK](https://github.com/thegenemyers/FASTK) & [Smudgeplot](https://github.com/KamilSJaron/smudgeplot) | v0.5.4 |
-| Assembly | [hifiasm](https://github.com/chhylp123/hifiasm) | v0.16.1 |
-| Assembly | [Canu / HiCanu](https://github.com/marbl/canu) | v2.3 |
-| Assembly | [Flye](https://github.com/mikolmogorov/Flye) | v2.9.x |
-| Assembly QC | [QUAST](https://github.com/ablab/quast) | v5.1.0rc1 |
-| Alignment | [minimap2](https://github.com/lh3/minimap2) | v2.24 |
-| Duplicate purging | [purge_dups](https://github.com/dfguan/purge_dups) | |
-| Completeness | [BUSCO](https://busco.ezlab.org/) | eudicots_odb10 |
-| Short-read alignment | [BWA](https://github.com/lh3/bwa) | |
-| Hi-C/Omni-C processing | [pairtools](https://github.com/open2c/pairtools) | v1.1.2 |
-| BAM handling | [samtools](https://github.com/samtools/samtools) | |
-| Scaffolding | [YaHS](https://github.com/c-zhou/yahs) | |
-| Contact map curation | [PretextMap / PretextView](https://github.com/sanger-tol) | |
-| Gap filling | [LR_Gapcloser](https://github.com/CAFS-bioinformatics/LR_Gapcloser) | |
-| Gene prediction | [Helixer](https://github.com/weberlab-hhu/Helixer) | v0.3.6 |
-| Functional annotation | [eggNOG-mapper](https://github.com/eggnogdb/eggnog-mapper), [InterProScan](https://github.com/ebi-pf-team/interproscan) | |
-| Homology search | [BLAST+](https://blast.ncbi.nlm.nih.gov/) (blastp) | |
-| Annotation merging | [AGAT](https://github.com/NBISweden/AGAT) | |
-| TE annotation | [EDTA](https://github.com/oushujun/EDTA) | |
-
-Exact version numbers and citations for every tool are listed in the preprint's Methods section and reference list.
-
----
-
 ## Data availability
 
 | Resource | Accession |
@@ -144,25 +112,3 @@ These scripts capture the **literal commands run on the original analysis server
 - Steps should generally be run in the order the folders are listed above (`qc` → `SizePrediction` → `asm` → `purging` → `scaffolding` → `anno`), since later steps consume the outputs of earlier ones.
 - Most tools are easiest to install via [conda/mamba](https://github.com/conda-forge/miniforge) (e.g. via `bioconda`); a few (Helixer, LR_Gapcloser, EDTA) are best installed from source as described in their own repositories.
 - The Python environment for the scaffolding/curation step can be created from [`scaffolding/requirements.txt`](scaffolding/requirements.txt).
-
-## Citation
-
-If you use this workflow or the associated genome assembly, please cite the preprint:
-
-```
-Landi, M., Muzemil, S., Adediji, A., Ondari, L., et al. (2026).
-Chromosome-scale genome assembly and annotation of the white star apple (Gambeya albida).
-Research Square. https://doi.org/10.21203/rs.3.rs-9271727/v1
-```
-
-## Funding & acknowledgements
-
-Sequencing was funded by the Malimbe Foundation and Inqaba Biotec West Africa. Computational resources were provided by the IITA Bioinformatics Unit. The African BioGenome Project (AfricaBP) supported project coordination and ethical/legal guidance. Full acknowledgements are available in the preprint.
-
-## License
-
-This repository is released under the [MIT License](LICENSE).
-
-## Contact
-
-Michael Landi — IITA / SLU — m.landi@cgiar.org
