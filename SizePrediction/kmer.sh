@@ -1,5 +1,5 @@
 #kmer analysis - pre assembly analysis jellyfish 2.2.8
-jellyfish count -C -m 21 -s 1000000 -t 20 <(zcat ./../data/HiFi_filtered/filtered_cells_merged.fastq.gz) -o StarApple.jr
+jellyfish count -C -m 21 -s 1000000000 -t 20 <(zcat ./../data/HiFi_filtered/filtered_cells_merged.fastq.gz) -o StarApple.jr
 jellyfish histo -t 20 StarApple.jr > StarApple.histo
 #view the plots on genomescope2 - genetated figure 2a
 /usr/bin/Rscript /data01/mlandi/software/genomescope2.0/genomescope.R -i StarApple.histo -o StarApple -k 21
