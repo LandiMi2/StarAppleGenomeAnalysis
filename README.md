@@ -100,7 +100,7 @@ flowchart TD
 | PacBio HiFi reads (SRA) | [SRR33323859](https://www.ncbi.nlm.nih.gov/sra/SRR33323859) |
 | Omni-C reads (SRA) | [SRR33422445](https://www.ncbi.nlm.nih.gov/sra/SRR33422445) |
 | Genome assembly (GenBank) | [JBNXVW000000000](https://www.ncbi.nlm.nih.gov/nuccore/JBNXVW000000000) |
-| Annotation files | [Zenodo, DOI: 10.5281/zenodo.20794479](https://doi.org/10.5281/zenodo.20794479) |
+| Annotation files | [Zenodo](https://doi.org/10.5281/zenodo.20794479) |
 
 ---
 
