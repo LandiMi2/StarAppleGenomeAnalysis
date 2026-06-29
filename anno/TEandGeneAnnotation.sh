@@ -28,6 +28,9 @@ makeblastdb -in uniprot_sprot.fasta -dbtype prot -out swissprot.db
 blastp -query ../StarAppleProteinClean.fa -db swissprot.db \
 -out star.outfmt6 -outfmt 6 -evalue 1e-6 -num_threads 20 -max_target_seqs 1
 
+#filtered 
+awk '$3 >= 40 && $4 >= 100' star.outfmt6 > star.filtered.outfmt6
+
 #final parsing annotations
 agat_sp_manage_functional_annotation.pl -f ../eggnog/star.emapper.decorated.gff \
 -b ../blastp/star.filtered.outfmt6 -d /data01/mlandi/databases/uniprot/uniprot_sprot.fasta \
